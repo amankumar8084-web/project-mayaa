@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiMap, FiMenu, FiX, FiLogIn } from 'react-icons/fi';
-import './Navbar.css';
+import { useNavigate } from "react-router-dom";
+import '../styles/Navbar.css';
 
 function Navbar() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -89,24 +91,30 @@ function Navbar() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {/* Mobile Login Button */}
           <motion.a
-            href="#login"
-            className="navbar-mobile-login-btn"
-            onClick={(e) => handleSmoothScroll(e, 'login')}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FiLogIn className="navbar-login-icon" />
-            <span>Login</span>
-          </motion.a>
+         href="/login"
+         className="navbar-mobile-login-btn"
+          onClick={(e) => {
+           e.preventDefault();
+           navigate("/login");
+      }}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+>
+        <FiLogIn className="navbar-login-icon" />
+       <span>Login</span>
+      </motion.a>
 
           {/* Desktop Login Button */}
           <motion.a
             href="#login"
             className="navbar-login"
-            onClick={(e) => handleSmoothScroll(e, 'login')}
+            onClick={(e) => {
+           e.preventDefault();
+           navigate("/login");
+            }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}

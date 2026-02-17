@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiMap, FiUsers, FiBriefcase, FiBookOpen } from 'react-icons/fi';
-import './LandingPage.css';
+import '../styles/LandingPage.css';
 import Navbar from './Navbar'
 
 function LandingPage() {
