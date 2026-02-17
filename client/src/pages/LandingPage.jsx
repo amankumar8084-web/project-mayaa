@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiMap, FiUsers, FiBriefcase, FiBookOpen } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import '../styles/LandingPage.css';
 import Navbar from './Navbar'
 import { useState } from 'react';
@@ -9,15 +10,7 @@ import { useEffect } from 'react';
 
 function LandingPage() {
 
-  const [showMore, setshowMore]=useState("");
-
-  useEffect(()=>{
-  useEffect(() => {
-  fetch("http://localhost:5000/api/home")
-    .then(res => res.json())
-    .then(data => console.log(data));
-}, []);
-
+  const navigate = useNavigate();
 
   const currentYear = new Date().getFullYear();
   
@@ -61,6 +54,8 @@ function LandingPage() {
     { code: 'PCT', name: 'PetroChemical Technology' }
   ];
 
+  
+  
   // Impact section data with icons
   const impactItems = [
     { icon: <FiUsers size={24} />, title: 'Students', description: 'Discover careers and startup ideas inside your own branch.' },
@@ -204,14 +199,11 @@ function LandingPage() {
             {departments.map((dept, index) => (
               <motion.a
                 key={index}
-                href="#"
                 variants={fadeInUp}
                 whileHover={{ y: -4 }}
                 className="department-card"
-                onClick={(e) => {
-                  e.preventDefault();
-                  console.log(`Clicked ${dept.code}`);
-                }}
+                onClick={() => navigate(`/login`)}
+                style={{ cursor: "pointer" }}
               >
                 <span className="department-code">{dept.code}</span>
                 <span className="department-name">{dept.name}</span>
