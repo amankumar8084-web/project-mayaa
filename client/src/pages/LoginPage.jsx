@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiMail, FiLock, FiArrowRight, FiMap } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom'; // Add this import
+import { useNavigate } from 'react-router-dom'; 
 import '../styles/LoginPage.css';
 
-function LoginPage() { // Changed component name to match export
-  const navigate = useNavigate(); // Add navigate hook
+function LoginPage() { 
+  const navigate = useNavigate(); 
   
   const [formData, setFormData] = useState({
     email: '',
@@ -69,8 +69,6 @@ function LoginPage() { // Changed component name to match export
       setIsLoading(false);
       // Here you would handle actual login logic
       alert('Login successful! (Demo)');
-      // Optionally redirect to dashboard after login
-      // navigate('/dashboard');
     }, 1500);
   };
 
@@ -82,7 +80,7 @@ function LoginPage() { // Changed component name to match export
   // Handle back to home click
   const handleBackToHome = (e) => {
     e.preventDefault();
-    navigate('/'); // Navigate back to home page
+    navigate('/home'); 
   };
 
   return (
@@ -106,7 +104,7 @@ function LoginPage() { // Changed component name to match export
               <FiMap className="brand-logo-icon" />
               <span className="brand-logo-text">Project<span>Mayaa</span></span>
             </div>
-            <h1 className="brand-title">Welcome Back</h1>
+            <h1 className="brand-title">Welcome</h1>
             <p className="brand-subtitle">
               Bridge the gap between engineering excellence and business innovation.
             </p>
@@ -139,7 +137,7 @@ function LoginPage() { // Changed component name to match export
             <div className="form-header">
               <h2 className="form-title">Login to Your Account</h2>
               <p className="form-subtitle">
-                Access your personalized domain mapping dashboard
+                Access your personalized domain-dashboard
               </p>
             </div>
 
@@ -238,7 +236,7 @@ function LoginPage() { // Changed component name to match export
 
            
             <div className="back-home">
-              <a href="/" className="back-link" onClick={handleBackToHome}>
+              <a href="/home" className="back-link" onClick={handleBackToHome}>
                 ← Back to Home
               </a>
             </div>
