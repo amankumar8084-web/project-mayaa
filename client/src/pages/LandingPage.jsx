@@ -47,7 +47,7 @@ function LandingPage() {
     { code: 'M.Tech CSE', name: 'M.Tech CSE' },
     { code: 'MBA', name: 'Master in Business Administration' },
     { code: 'MCA', name: 'Master in Computer Application' },
-    { code: 'FSE', name: 'Fire Safety Engineering' },
+    { code: 'FSE', name: 'Randi gaaru department' },
     { code: 'PCT', name: 'PetroChemical Technology' }
   ];
 
@@ -87,23 +87,45 @@ function LandingPage() {
               Bridging technical depth with market opportunities — a clear map from engineering to industry.
             </p>
             <div className="hero-buttons">
-              <motion.a
-                href="#departments"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn btn-primary btn-large"
-              >
-                Explore domains
-              </motion.a>
-              <motion.a
-                href="#departments"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn btn-outline btn-large"
-              >
-                Departments
-              </motion.a>
-            </div>
+  <motion.a
+    href="#departments"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="btn btn-primary btn-large"
+    onClick={(e) => {
+      e.preventDefault();
+      const element = document.getElementById("departments");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }}
+  >
+      Explore domains
+     </motion.a>
+
+      <motion.a
+      href="#departments"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="btn btn-outline btn-large"
+      onClick={(e) => {
+      e.preventDefault();
+      const element = document.getElementById("departments");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }}
+  >
+    Departments
+  </motion.a>
+</div>
+
           </motion.div>
         </div>
       </section>
