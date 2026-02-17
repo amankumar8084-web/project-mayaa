@@ -4,6 +4,9 @@ import { FiArrowRight, FiMap, FiUsers, FiBriefcase, FiBookOpen } from 'react-ico
 import { useNavigate } from 'react-router-dom';
 import '../styles/LandingPage.css';
 import Navbar from './Navbar'
+import { useState } from 'react';
+import { useEffect } from 'react';
+
 
 function LandingPage() {
 

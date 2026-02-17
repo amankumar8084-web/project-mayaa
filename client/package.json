@@ -13,8 +13,14 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
     "framer-motion": "^12.34.0",
+<<<<<<< HEAD
+    "motion": "^12.34.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+=======
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+>>>>>>> 2b10083f02f7945023b25dffc3c4633cd049f4a3
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^10.0.2",
     "react-router-dom": "^7.13.0"
