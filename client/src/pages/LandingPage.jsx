@@ -3,8 +3,21 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiMap, FiUsers, FiBriefcase, FiBookOpen } from 'react-icons/fi';
 import './LandingPage.css';
 import Navbar from './Navbar'
+import { useState } from 'react';
+import { useEffect } from 'react';
+
 
 function LandingPage() {
+
+  const [showMore, setshowMore]=useState("");
+
+  useEffect(()=>{
+  useEffect(() => {
+  fetch("http://localhost:5000/api/home")
+    .then(res => res.json())
+    .then(data => console.log(data));
+}, []);
+
 
   const currentYear = new Date().getFullYear();
   
